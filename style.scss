@@ -20,6 +20,8 @@ h1 {
     font-size: 2.25rem;
     font-weight: 300;
     color: $white;
+    line-height: 1.2;
+    margin: 0;
     span {
         font-size: inherit;
         font-weight: 900;
@@ -28,8 +30,9 @@ h1 {
 h2 {
     font-size: 1.3125rem;;
 }
-p {
-    font-size: .625rem;
+h3 {
+    margin-bottom: 1em;
+    font-size: 1.4rem;
 }
 .subheading {
     color: $orange;
@@ -40,12 +43,29 @@ button {
 background: rgb(255,165,29);
 background: linear-gradient(162deg, rgba(255,165,29,1) 45%, rgba(255,113,59,1) 80%);
 }
+
 //Layout
 .wrapper {
     text-align: center;
 }
 .section-one {
-    background: url(/images/dark-ribs.jpg) center/cover no-repeat;
+    background: url(/images/dark-ribs.jpg) left bottom/cover no-repeat;
     height: 358px;
-    @include flexCenter(column)
+    @include flexCenter(column);
+    p {
+        font-size: .625rem;
+        margin: 0;
+        padding-top: 1em;
+        font-weight: 700;
+        &.border-top::before {
+            content: '';
+            position: absolute;
+            top: 0px;
+            height: 5px;
+            width: 140px;
+            background: linear-gradient(162deg, rgba(255,165,29,1) 45%, rgba(255,113,59,1) 80%);
+        }
+    }
 }
+
+
