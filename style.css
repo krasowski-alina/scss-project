@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #FFF;
+}
+h1 span {
+  font-size: inherit;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 1.3125rem;
+}
+
+p {
+  font-size: 0.625rem;
+}
+
+.subheading {
+  color: #F18119;
+  text-transform: uppercase;
+  letter-spacing: 1.6;
+}
+
+button {
+  background: rgb(255, 165, 29);
+  background: linear-gradient(162deg, rgb(255, 165, 29) 45%, rgb(255, 113, 59) 80%);
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.section-one {
+  background: url(/images/dark-ribs.jpg) center/cover no-repeat;
+  height: 358px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}/*# sourceMappingURL=style.css.map */
