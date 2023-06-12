@@ -34,8 +34,12 @@ h2 {
     font-size: 1.3125rem;;
 }
 h3 {
-    margin-bottom: 1em;
     font-size: 1.4rem;
+}
+.subheading {
+    color: $orange;
+    text-transform: uppercase;
+    letter-spacing: 1.6;
 }
 .intro {
     p {
@@ -53,27 +57,72 @@ h3 {
         }
     }
 }
-.subheading {
-    color: $orange;
-    text-transform: uppercase;
-    letter-spacing: 1.6;
+.main-content {
+    .subheading{
+        font-size: 1rem;
+        margin-bottom: 1em;
+    }
+    p {
+        letter-spacing: .3px;
+        margin-bottom: 1em;
+        font-weight: 300;
+    }
 }
-button {
-background: rgb(255,165,29);
-background: linear-gradient(162deg, rgba(255,165,29,1) 45%, rgba(255,113,59,1) 80%);
+.small-text {
+    font-size: .625rem;
 }
 
 //Layout
 .wrapper {
     text-align: center;
 }
+section {
+    padding: 0 1.2em;
+}
 .intro {
     background: url(/images/dark-ribs.jpg) left bottom/cover no-repeat;
     height: 358px;
+    margin-bottom: 2em;
     @include flexCenter(column);
     p {
         order: -1;
     }
+    h3 {
+        margin-bottom: 1em;
+    }
+}
+.main-content,
+form {
+    @include flexCenter(column);
 }
 
+.main-content-input,
+.btn {
+    padding: .5em 2.5em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+    width: 100%;
+}
+.main-content-input {
+    border: 1px solid $grey;
+    &:focus{
+        border: 5px solid $orange;
+    }
+    &:hover{
+        font-size: 1.6rem;
+        transition: .4s ease;
+    }
 
+}
+.btn-register {
+    background: rgb(255,165,29);
+    background: linear-gradient(162deg, rgba(255,165,29,1) 45%, rgba(255,113,59,1) 80%);
+    border: none;
+    color: $white;
+    text-transform: uppercase;
+    &:hover {
+        background: unset;
+        border: 2px solid $orange;
+        color: $primary-font;
+    }
+    }
