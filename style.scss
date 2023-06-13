@@ -9,15 +9,21 @@ $primary-font: #404040;
     align-items: center;
     flex-direction: $direction;
 }
+@mixin flexCenterDesktop(){
+    display: flex;
+    justify-content: center;
+}
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+//Typography
+body {
     font-size: 1rem;
     color: $primary-font;
     font-family: 'Source Sans 3', sans-serif;
 }
-//Typography
 h1 {
     font-size: 2.25rem;
     font-weight: 300;
@@ -80,7 +86,9 @@ section {
     padding: 0 1.2em;
 }
 .intro {
-    background: url(/images/dark-ribs.jpg) left bottom/cover no-repeat;
+    background: url(/images/ribs.jpg) center/cover no-repeat;
+    background-color: $grey;
+    background-blend-mode: overlay;
     height: 358px;
     margin-bottom: 2em;
     @include flexCenter(column);
@@ -102,15 +110,17 @@ form {
     margin-bottom: 1em;
     border-radius: 4px;
     width: 100%;
+    cursor: pointer;
+    text-align: center;
+    transition: all .5s;
+    &:hover{
+        transform: scale(1.2);
+    }
 }
 .main-content-input {
     border: 1px solid $grey;
     &:focus{
         border: 5px solid $orange;
-    }
-    &:hover{
-        font-size: 1.6rem;
-        transition: .4s ease;
     }
 
 }
@@ -118,11 +128,55 @@ form {
     background: rgb(255,165,29);
     background: linear-gradient(162deg, rgba(255,165,29,1) 45%, rgba(255,113,59,1) 80%);
     border: none;
+    font-weight: 900;
+    letter-spacing: 1px;
     color: $white;
     text-transform: uppercase;
+    transition: all .5s;
     &:hover {
         background: unset;
         border: 2px solid $orange;
         color: $primary-font;
+        
     }
     }
+@media (min-width: 670px){
+    body,
+    input,
+    .btn {
+        font-size: 1.25rem;
+    }
+    h1 {
+        font-size: 5.5rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    .wrapper {
+        display: flex;
+    }
+    .intro ,
+    .main-content {
+        min-height: 100vh;
+    }
+    .intro {
+        width: 60%;
+        margin-bottom: unset;
+        p {
+            font-size: 1rem;
+            &::before{
+                width: 230px;
+            }
+        }
+    }
+    .main-content {
+        width: 40%;
+        @include flexCenterDesktop();
+        & > * {
+            max-width: 400px;
+        }
+        .small-text {
+            font-size: 1rem;
+        }
+    }
+}
